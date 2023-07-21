@@ -2,6 +2,7 @@ package com.example.maisonlalanne.model.beans;
 
 import jakarta.persistence.*;
 
+import java.sql.Blob;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,7 @@ public class BedroomBean {
     private long id;
     private int price;
     private String name, description, service;
-
+    private String picture;
     @OneToMany(mappedBy = "bedroom", fetch = FetchType.LAZY)
     private List<ReservationBean> bedroomreservation;
     public BedroomBean() {
@@ -23,19 +24,21 @@ public class BedroomBean {
         this.id = id;
     }
 
-    public BedroomBean(long id, String name, String description, String service) {
+    public BedroomBean(long id, String name, String description, String service, String picture) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.service = service;
+        this.picture = picture;
     }
 
-    public BedroomBean(long id, int price, String name, String service, String description) {
+    public BedroomBean(long id, int price, String name, String service, String description, String picture) {
         this.id = id;
         this.price = price;
         this.name = name;
         this.service = service;
         this.description = description;
+        this.picture = picture;
     }
 
     public long getId() {
@@ -77,5 +80,13 @@ public class BedroomBean {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

@@ -1,7 +1,9 @@
 package com.example.maisonlalanne.controller;
 
 import com.example.maisonlalanne.model.beans.BedroomBean;
+import com.example.maisonlalanne.model.repository.BedroomRepository;
 import com.example.maisonlalanne.services.BedroomService;
+import com.example.maisonlalanne.services.PictureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +17,10 @@ public class BedroomController {
 
     @Autowired
     private BedroomService bedroomService;
+
+    @Autowired
+    private PictureService pictureService;
+
     ArrayList<BedroomBean> listbedroom = new ArrayList<>();
 
 
@@ -23,6 +29,14 @@ public class BedroomController {
     public List<BedroomBean> allBedroom() {
         System.out.println("/allbedroom");
         return bedroomService.getAll();
+    }
+
+    // Endpoint pour récupérer les URL associées à une chambre par son ID
+    @GetMapping("/{id}/allpictureById")
+    public List<String> allPictureById(@PathVariable Long id) {
+        System.out.println("/allpictureById");
+
+        return pictureService.getUrlsByBedroomId(id);
     }
 
     //http://localhost:8080/bedroom/namebedroom
@@ -37,8 +51,12 @@ public class BedroomController {
     public BedroomBean getBedroomId(@PathVariable Long id) {
         System.out.println("/getBedroomId =" + id);
 
+
         return bedroomService.getById(id);
     }
+
+
+
 
     //http://localhost:8080/bedroom/savebedroom
     @PostMapping("/savebedroom")
