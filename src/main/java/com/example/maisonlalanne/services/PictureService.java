@@ -18,6 +18,8 @@ public class PictureService {
         return pictureRepository.findAll();
     }
 
+
+    //Recuperer les urls des chambres grace à l'id
     public List<String> getUrlsByBedroomId(Long bedroomId) {
         List<String> urls = new ArrayList<>();
         List<PictureBean> bedroomImages = pictureRepository.findByBedroomId(bedroomId);

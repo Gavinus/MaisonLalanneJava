@@ -1,16 +1,10 @@
 package com.example.maisonlalanne.services;
-
-
 import com.example.maisonlalanne.model.beans.ReservationBean;
-import com.example.maisonlalanne.model.beans.UserBean;
 import com.example.maisonlalanne.model.repository.BedroomRepository;
 import com.example.maisonlalanne.model.repository.ReservationRepository;
 import com.example.maisonlalanne.model.repository.UserRepository;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,6 +23,8 @@ public class ReservationService {
         return reservationrepository.findAll();
     }
 
+
+    // A VOIR POUR LA V2, POUR RESERVATION CHECK L'ID USER et ID SESSION
     public void addOrUpdateReservation(ReservationBean toSave) throws Exception {
         //Controle des données
 //        if (toSave == null) {

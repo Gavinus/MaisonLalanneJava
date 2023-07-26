@@ -1,12 +1,8 @@
 package com.example.maisonlalanne.services;
-
-
 import com.example.maisonlalanne.model.beans.BedroomBean;
-import com.example.maisonlalanne.model.beans.UserBean;
 import com.example.maisonlalanne.model.repository.BedroomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

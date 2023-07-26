@@ -1,16 +1,5 @@
 package com.example.maisonlalanne.model.beans;
-
-import com.example.maisonlalanne.model.repository.ReservationRepository;
-import com.example.maisonlalanne.model.repository.UserRepository;
-import com.example.maisonlalanne.services.ReservationService;
-import com.example.maisonlalanne.services.UserService;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.time.DateTimeException;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
