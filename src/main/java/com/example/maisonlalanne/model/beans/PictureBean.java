@@ -1,6 +1,4 @@
 package com.example.maisonlalanne.model.beans;
-
-
 import jakarta.persistence.*;
 
 @Entity

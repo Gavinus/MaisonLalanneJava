@@ -1,15 +1,8 @@
 package com.example.maisonlalanne.controller;
-
-
 import com.example.maisonlalanne.model.beans.ReservationSimpleBean;
-import com.example.maisonlalanne.model.beans.UserBean;
-import com.example.maisonlalanne.model.repository.ReservationRepository;
-
 import com.example.maisonlalanne.services.ReservationSimpleService;
-import com.example.maisonlalanne.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -20,7 +13,6 @@ public class ReservationSimpleController {
     private ReservationSimpleService reservationsimpleservice;
 
     //http://localhost:8080/reservationsimple/1
-    //trouver un utilisateur par son id
     @GetMapping("/{id}") //
     public ReservationSimpleBean getUserId(@PathVariable Long id) {
         System.out.println("/getUserId id=" + id);

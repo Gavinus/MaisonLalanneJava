@@ -1,8 +1,5 @@
 package com.example.maisonlalanne.model.beans;
-
 import jakarta.persistence.*;
-
-import java.sql.Blob;
 import java.util.List;
 
 @Entity

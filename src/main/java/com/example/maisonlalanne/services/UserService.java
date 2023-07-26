@@ -1,11 +1,9 @@
 package com.example.maisonlalanne.services;
-
 import com.example.maisonlalanne.model.beans.UserBean;
 import com.example.maisonlalanne.model.repository.UserRepository;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -34,11 +32,8 @@ public class UserService {
     //Si l'utilisateur n'existe aps l'insert sinon vérifie son mdp
     //Et met à jour sa session
     public UserBean checkUserSession(UserBean userBean, HttpSession session) throws Exception {
-
         //userBean.setEmail(userBean.getEmail().trim());
-
         UserBean userRegister = userrepository.findByEmailAndPasswordEqualsIgnoreCase(userBean.getEmail(), userBean.getPassword());
-
 
         if (userRegister == null) {
             //insert
